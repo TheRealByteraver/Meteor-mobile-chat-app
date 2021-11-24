@@ -1,0 +1,245 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+html {
+  background-color: #EAE1E1;
+}
+
+body {
+  padding: 10px;
+  font-family: sans-serif;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.app-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #03051E;
+  color: #EAE1E1;
+  margin-bottom: .25rem;
+  padding: .5rem;
+}
+
+.app-title {
+  font-size: larger;
+}
+
+.app-logout-button {
+  color: #EAE1E1;
+  background-color: #0B5269;
+
+  border-radius: 4px;
+  flex-grow: 0;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  padding: .4rem;
+
+  /* border: 2px solid #62374E; */
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column-reverse;
+
+  /* border: 2px solid red; */
+}
+
+.chat-message-list {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding-left: 0;
+
+  /* border: 2px solid darkcyan; */
+}
+
+.chat-message-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  height: fit-content;
+  width: fit-content;
+  margin-bottom: .25rem;
+  padding: .25rem;
+  max-width: 85%;
+
+  color: #EAE1E1;
+  background-color: #0B5269;
+  border-radius: 4px;
+
+  /* border: 2px solid salmon; */
+}
+
+.user-message {
+  background-color: #978D58;
+  align-self: flex-end;
+}
+
+.chat-message-text {
+  /* white-space: nowrap; */
+  align-self: center;
+}
+
+.delete-message-button {
+  display: flex;
+  background-color: #0B5269;
+  color: #EAE1E1;
+  font-size: 1.25rem;
+  /* font-weight: bold; */
+
+  align-self: flex-end;
+  justify-content: center;
+  /* align-content: center; */
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+  height: 1.5rem;
+  line-height: 1.25rem;
+  width: 1.5rem;
+  margin: .25rem;
+  margin-left: .5rem;
+  border: 2px solid #978D58;
+}
+
+.message-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  /* border: 2px solid green; */
+}
+
+.message-form-input {
+  display: flex;
+  flex-grow: 1;
+  border: 1px solid #03051E;
+  outline: none;
+}
+
+.message-form-button {
+  color: #EAE1E1;
+  background-color: #0B5269;
+
+  border-radius: 4px;
+  flex-grow: 0;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  margin-left: .25rem;
+  padding: .4rem;
+
+
+  /* border: 2px solid darkslateblue; */
+}
+
+/**********************
+*                     *
+*    login styling    *
+*                     *
+**********************/
+
+h2.login-input-container {
+  display: flex;
+  align-items: center;
+
+  font-size: 1.8rem;
+  margin-top: 2rem;
+}
+
+ .login-form {
+  display: flex;
+  flex-direction: column;
+
+  /* border: 2px solid red; */
+} 
+
+.login-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: .5rem 0;
+
+  /* border: 2px solid green; */
+}
+
+.login-label {
+  color: #0B5269;
+  width: 100%;
+  flex-grow: 0;
+  margin-bottom: .25rem;
+
+  /* border: 2px solid orange; */
+}
+
+/* Always use padding and line-height css property [for input styling] 
+It's perfect for all mobile device and all browser. */
+
+.login-input {
+  line-height: 1rem;
+  padding: .5rem 0;
+  width: 100%;
+  border-radius: 5px;
+  outline: 1px solid lightgray;
+
+  /* border: 2px solid brown; */
+}
+
+.login-button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.submit-button,
+.mode-select-button {
+  color: #EAE1E1;
+  background-color: #0B5269;
+
+  border-radius: 4px;
+  /* border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px; */
+
+  font-size: 1rem;
+  font-weight: bold;
+  height: 2.5rem;
+  padding: .4rem;
+
+  min-width: 4rem;
+  width: 33%;
+
+  /* border: 2px solid darkslateblue; */
+}
+
+.mode-select-button {
+  color: #0B5269;
+  background-color: #EAE1E1;
+  /* border-radius: 4px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px; */
+  border: 2px solid #0B5269;
+}
+
+.login-button-divider {
+  font-weight: bold;
+  font-size: 1.5rem;
+}

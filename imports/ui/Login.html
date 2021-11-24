@@ -1,0 +1,70 @@
+<template name="login">
+
+  <form action="" class="login-form">
+    <h2 class="login-input-container">
+      {{#if loginModeActive}}
+        Login
+      {{else}}
+        Sign up
+      {{/if}}      
+    </h2>
+    <div class="login-input-container">
+      <label class="login-label" htmlFor="username">Username</label>
+      <input
+        class="login-input"
+        type="text"
+        {{!-- placeholder="Username" --}}
+        name="username"
+        autocomplete="username"
+        required
+      />
+    </div>
+    <div class="login-input-container">
+      <label class="login-label" htmlFor="password">Password</label>
+      <input  
+        class="login-input"
+        type="password"
+        {{!-- placeholder="Password" --}}
+        name="password"
+        autocomplete="password"
+        required
+      />
+    </div>
+    {{#unless loginModeActive}}
+    <div class="login-input-container">
+      <label class="login-label" htmlFor="password">Repeat Password</label>
+      <input  
+        class="login-input"
+        type="password"
+        {{!-- placeholder="Password" --}}
+        name="repeat-password"
+        autocomplete="password"
+        required
+      />
+    </div>
+    {{/unless}}
+    <div class="login-button-container">
+      <button 
+        class="submit-button"
+        type="submit">
+          {{#if loginModeActive}}
+            Login
+          {{else}}
+            Sign up
+          {{/if}}
+      </button>
+      <div class="login-button-divider">
+        👈 👉
+      </div>
+      <button 
+        class="mode-select-button" 
+        type="button">
+          {{#if loginModeActive}}
+            Sign up
+          {{else}}
+            Login 
+          {{/if}}
+      </button>
+    </div>
+  </form>
+</template>

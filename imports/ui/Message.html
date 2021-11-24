@@ -1,0 +1,8 @@
+<template name="message">
+  <li class="chat-message-container {{ownMessageClass}}">
+    <p class="chat-message-text">{{messageText}}</p>
+    {{#if deleteMessageEnabled}}
+      <button class="delete-message-button">&times;</button>
+    {{/if}}
+  </li>
+</template>

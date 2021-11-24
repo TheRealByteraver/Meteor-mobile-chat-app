@@ -1,0 +1,35 @@
+<body>
+  {{> mainContainer}}
+</body>
+
+<template name="mainContainer">
+  <div class="container">
+    <header class="app-header">
+      <h1 class="app-title">Welcome to the chat{{getTitleUsername}}!</h1>
+      {{#if getTitleUsername}}
+      <button class="app-logout-button">Logout</button>
+      {{/if}}
+    </header>
+
+    {{#if isUserLoggedIn}}
+      <div class="chat-container">
+        {{> form}}
+        <ul class="chat-message-list">
+          {{#each messages}}
+            {{> message}}
+          {{/each}}
+        </ul>  
+      </div>
+    {{else}}
+      {{> login}}
+    {{/if}}
+
+  </div>
+</template>
+
+<template name="form">
+  <form action="" class="message-form">
+    <input class="message-form-input" type="text" name="messageText" placeholder="type your message here" />
+    <button class="message-form-button" type="submit">Send</button>
+  </form>
+</template>
