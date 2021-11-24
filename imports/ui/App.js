@@ -74,7 +74,8 @@ Template.form.events({
       username: user.username,
       createdAt: new Date(),
     };
-    MessagesCollection.insert(messageObject);
+    // MessagesCollection.insert(messageObject);
+    Meteor.call('messages.insert', messageObject);
 
     // clear form input value
     target.messageText.value = '';
