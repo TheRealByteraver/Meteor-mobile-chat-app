@@ -14,6 +14,9 @@
     {{#if isUserLoggedIn}}
       <div class="chat-container">
         {{> form}}
+        {{#if isLoading}}
+          <div class="loading-messsage">loading messsages...</div>
+        {{/if}}
         <ul class="chat-message-list">
           {{#each messages}}
             {{> message}}

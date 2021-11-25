@@ -1,22 +1,34 @@
+/*
+  Colors for CSS
+  darkcyan:     #0B5269
+  darkblue:     #03051E
+  lightkhaki:   #978D58
+  lightsalmon:  #EAE1E1
+*/
+
+import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
-import { MessagesCollection } from '../api/MessagesCollection';
+import { ReactiveDict } from 'meteor/reactive-dict';
+import { MessagesCollection } from '../db/MessagesCollection';
 
 import './App.html';
 import './Message.js';
 import './Login.js';
 
-// Colors:
-
-//  darkcyan:     #0B5269
-//  darkblue:     #03051E
-//  lightkhaki:   #978D58
-//  lightsalmon:  #EAE1E1
-
-// Template.body.helpers({}); // always available
+const IS_LOADING_STRING = 'isLoading';
 
 const getUser = () => Meteor.user();
 
 const isUserLoggedIn = () => !!getUser(); // force boolean
+
+Template.mainContainer.onCreated(function mainContainerOnCreated(){
+  this.loadingState = new ReactiveDict();
+
+  const handler = Meteor.subscribe('messages');
+  Tracker.autorun(() => {
+    this.loadingState.set(IS_LOADING_STRING, !handler.ready());
+  });
+});
 
 Template.mainContainer.events({
   'click .app-logout-button'(event) {
@@ -25,6 +37,10 @@ Template.mainContainer.events({
 });
 
 Template.mainContainer.helpers({
+  isLoading(){
+    const instance = Template.instance();
+    return instance.loadingState.get(IS_LOADING_STRING);
+  },
   getTitleUsername() {
     const user = getUser();
     return user

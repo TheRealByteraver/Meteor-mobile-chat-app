@@ -1,13 +1,18 @@
 <template name="login">
 
   <form action="" class="login-form">
-    <h2 class="login-input-container">
-      {{#if loginModeActive}}
-        Login
-      {{else}}
-        Sign up
-      {{/if}}      
-    </h2>
+
+    <div class="login-button-container">
+      <button 
+        class="login-button {{loginButtonActiveClass}}"
+        type="button">Login</button>
+      <button 
+        class="signup-button  {{signupButtonActiveClass}}" 
+        type="button">
+            Sign up
+      </button>
+    </div>
+
     <div class="login-input-container">
       <label class="login-label" htmlFor="username">Username</label>
       <input
@@ -43,28 +48,14 @@
       />
     </div>
     {{/unless}}
-    <div class="login-button-container">
-      <button 
-        class="submit-button"
-        type="submit">
-          {{#if loginModeActive}}
-            Login
-          {{else}}
-            Sign up
-          {{/if}}
-      </button>
-      <div class="login-button-divider">
-        👈 👉
-      </div>
-      <button 
-        class="mode-select-button" 
-        type="button">
-          {{#if loginModeActive}}
-            Sign up
-          {{else}}
-            Login 
-          {{/if}}
-      </button>
-    </div>
+    <button 
+      class="submit-button"
+      type="submit">
+        {{#if loginModeActive}}
+          Login
+        {{else}}
+          Sign up
+        {{/if}}
+    </button>
   </form>
 </template>

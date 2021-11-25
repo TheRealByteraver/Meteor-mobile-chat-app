@@ -12,6 +12,14 @@ Template.login.helpers({
   loginModeActive(){
     return Template.instance().loginModeActive.get();
   },
+  loginButtonActiveClass(){
+    const loginModeActive = Template.instance().loginModeActive.get();
+    return loginModeActive && 'selected-button';
+  },
+  signupButtonActiveClass(){
+    const loginModeActive = Template.instance().loginModeActive.get();
+    return (!loginModeActive) && 'selected-button';
+  },
 });
 
 Template.login.events({
@@ -50,8 +58,10 @@ Template.login.events({
       // }
     }
   },
-  'click .mode-select-button'(event, instance) {
-    const currentMode = instance.loginModeActive.get(); 
-    instance.loginModeActive.set(!currentMode);    
+  'click .login-button'(event, instance) {
+    instance.loginModeActive.set(true);    
+  },
+  'click .signup-button'(event, instance) {
+    instance.loginModeActive.set(false);    
   },
 });

@@ -1,5 +1,5 @@
 import { Template } from 'meteor/templating';
-import { MessagesCollection } from '../api/MessagesCollection';
+// import { MessagesCollection } from '../db/MessagesCollection';
 
 import './Message.html';
 

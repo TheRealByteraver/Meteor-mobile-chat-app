@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
-import { MessagesCollection } from '../imports/api/MessagesCollection';
+import { MessagesCollection } from '../imports/db/MessagesCollection';
 import '../imports/api/MessagesMethods';
+import '../imports/api/messagesPublications';
 
 const insertMessage = (messageText, user) => 
   MessagesCollection.insert( 
