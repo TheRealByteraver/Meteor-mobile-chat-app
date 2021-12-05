@@ -4,6 +4,14 @@
   darkblue:     #03051E
   lightkhaki:   #978D58
   lightsalmon:  #EAE1E1
+
+Your new mongo URL is
+mongodb://erlando:dMmXNJybWX4Zr9Pid@SG-galaxycluster-38726.servers.mongodirector.com:27017,SG-galaxycluster-38727.servers.mongodirector.com:27017/erland-ca2-meteorapp-com?replicaSet=RS-galaxycluster-0&ssl=true.
+It is a good idea to add this new URL to your app settings 
+  ({ "galaxy.meteor.com": { env: { MONGO_URL: "YOUR MONGO URL" } } }).
+******************************************************************************
+For details, visit https://galaxy.meteor.com/app/erland-ca2.meteorapp.com
+
 */
 
 import { Meteor } from 'meteor/meteor';

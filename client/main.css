@@ -13,13 +13,12 @@
   border: none;
 }
 
-html {
-  background-color: #EAE1E1;
-}
-
 body {
-  padding: 10px;
+  background-color: #EAE1E1;
   font-family: sans-serif;
+  padding: 10px;
+  max-width: 1024px;
+  margin: auto;
 }
 
 button:hover {
@@ -40,6 +39,10 @@ button:hover {
 
 .app-title {
   font-size: larger;
+  flex-grow: 1;
+  overflow: hidden;
+  max-width: 75%;
+  /* border: 1px solid red; */
 }
 
 .app-logout-button {
@@ -48,6 +51,7 @@ button:hover {
 
   border-radius: 4px;
   flex-grow: 0;
+  flex-shrink: 0;
 
   font-size: 1rem;
   font-weight: bold;
@@ -164,26 +168,22 @@ button:hover {
 *                     *
 **********************/
 
-h2.login-input-container {
-  display: flex;
-  align-items: center;
-
-  font-size: 1.8rem;
-  margin-top: 2rem;
-}
-
  .login-form {
   display: flex;
   flex-direction: column;
+  max-width: 325px;
+  margin: 2rem auto;
+  padding: 0 1rem 1rem;
 
-  /* border: 2px solid red; */
+  border-radius: .5rem;
+  border: 1px solid #0B5269;
 } 
 
 .login-input-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: .5rem 0;
+  margin-bottom: .5rem;
 
   /* border: 2px solid green; */
 }
@@ -230,6 +230,7 @@ It's perfect for all mobile device and all browser. */
   font-size: 1rem;
   font-weight: bold;
   height: 2.5rem;
+  margin-bottom: .5rem;
   padding: .4rem;
 
   min-width: 4rem;

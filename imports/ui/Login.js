@@ -59,9 +59,11 @@ Template.login.events({
     }
   },
   'click .login-button'(event, instance) {
-    instance.loginModeActive.set(true);    
+    const loginMode = instance.loginModeActive.get();
+    instance.loginModeActive.set(!loginMode);    
   },
   'click .signup-button'(event, instance) {
-    instance.loginModeActive.set(false);    
+    const loginMode = instance.loginModeActive.get();
+    instance.loginModeActive.set(!loginMode);    
   },
 });
