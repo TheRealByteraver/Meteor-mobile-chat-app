@@ -6,6 +6,14 @@
   lightsalmon:  #EAE1E1
 */
 
+:root {
+  --theme-color-light: #EAE1E1;
+  --theme-color-medium: #978D58;
+  --theme-color-darker: #0B5269;
+  --theme-color-dark: #03051E;
+  --border-radius: 5px;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -14,15 +22,19 @@
 }
 
 body {
-  background-color: #EAE1E1;
+  background-color: var(--theme-color-light);
   font-family: sans-serif;
-  padding: 10px;
-  max-width: 1024px;
-  margin: auto;
+  height: 100vh;
 }
 
-button:hover {
-  cursor: pointer;
+.container { /* header + chat-message-list + form */
+  min-width: 350px;
+  max-width: 1024px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid green; */
 }
 
 .app-header {
@@ -31,10 +43,10 @@ button:hover {
   align-items: center;
   justify-content: space-between;
 
-  background-color: #03051E;
-  color: #EAE1E1;
+  background-color: var(--theme-color-dark);
+  color: var(--theme-color-light);
   margin-bottom: .25rem;
-  padding: 1rem .5rem;
+  padding: 2rem .5rem 1rem;
 }
 
 .app-title {
@@ -42,39 +54,30 @@ button:hover {
   flex-grow: 1;
   overflow: hidden;
   max-width: 75%;
-  /* border: 1px solid red; */
 }
 
 .app-logout-button {
-  color: #EAE1E1;
-  background-color: #0B5269;
-
-  border-radius: 4px;
+  color: var(--theme-color-light);
+  background-color: var(--theme-color-darker);
+  border-radius: var(--border-radius);
   flex-grow: 0;
   flex-shrink: 0;
-
   font-size: 1rem;
   font-weight: bold;
-
   padding: .4rem;
-
-  /* border: 2px solid #62374E; */
 }
 
-.chat-container {
-  display: flex;
-  flex-direction: column-reverse;
-
-  /* border: 2px solid red; */
+button:hover {
+  cursor: pointer;
 }
 
 .chat-message-list {
   display: flex;
   flex-direction: column;
   list-style-type: none;
-  padding-left: 0;
-
-  /* border: 2px solid darkcyan; */
+  padding: 0 .25rem;
+  height: 100%;
+  overflow-y: scroll;
 }
 
 .chat-message-container {
@@ -88,27 +91,24 @@ button:hover {
   padding: .25rem;
   max-width: 85%;
 
-  color: #EAE1E1;
-  background-color: #0B5269;
-  border-radius: 4px;
-
-  /* border: 2px solid salmon; */
+  color: var(--theme-color-light);
+  background-color: var(--theme-color-darker);
+  border-radius: var(--border-radius);
 }
 
 .user-message {
-  background-color: #978D58;
+  background-color: var(--theme-color-medium);
   align-self: flex-end;
 }
 
 .chat-message-text {
-  /* white-space: nowrap; */
   align-self: center;
 }
 
 .delete-message-button {
   display: flex;
-  background-color: #0B5269;
-  color: #EAE1E1;
+  background-color: var(--theme-color-darker);
+  color: var(--theme-color-light);
   font-size: 1.25rem;
   /* font-weight: bold; */
 
@@ -124,42 +124,33 @@ button:hover {
   width: 1.5rem;
   margin: .25rem;
   margin-left: .5rem;
-  border: 2px solid #978D58;
+  border: 2px solid var(--theme-color-medium);
 }
 
 .message-form {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-
-  /* border: 2px solid green; */
+  margin: .25rem .25rem 1rem;
 }
 
 .message-form-input {
-  display: flex;
   flex-grow: 1;
-  border: 1px solid #03051E;
+  border: 1px solid var(--theme-color-dark);
+  border-radius: var(--border-radius);
+  padding: 0 .25rem;
   outline: none;
 }
 
 .message-form-button {
-  color: #EAE1E1;
-  background-color: #0B5269;
-
-  border-radius: 4px;
   flex-grow: 0;
-
+  background-color: var(--theme-color-darker);
+  color: var(--theme-color-light);
   font-size: 1rem;
   font-weight: bold;
-
   margin-left: .25rem;
   padding: .4rem;
-
-
-  /* border: 2px solid darkslateblue; */
+  border-radius: var(--border-radius);
 }
 
 /**********************
@@ -171,46 +162,43 @@ button:hover {
  .login-form {
   display: flex;
   flex-direction: column;
-  max-width: 325px;
+  width: 350px;
   margin: 2rem auto;
   padding: 0 1rem 1rem;
+  font-size: 1.5rem;
 
-  border-radius: .5rem;
-  border: 1px solid #0B5269;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--theme-color-darker);
 } 
 
 .login-input-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: .5rem;
-
-  /* border: 2px solid green; */
+  margin: 1rem 0;
 }
 
 .login-label {
-  color: #0B5269;
-  width: 100%;
+  color: var(--theme-color-darker);
   flex-grow: 0;
   margin-bottom: .25rem;
-
-  /* border: 2px solid orange; */
 }
 
 /* Always use padding and line-height css property [for input styling] 
 It's perfect for all mobile device and all browser. */
 
 .login-input {
-  line-height: 1rem;
-  padding: .5rem 0;
+  line-height: 1.5rem;
+  font-size: 1.5rem;
+  padding: .5rem 0 0 .25rem;
   width: 100%;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
   outline: 1px solid lightgray;
 
   /* border: 2px solid brown; */
 }
 
 .login-button-container {
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -221,11 +209,11 @@ It's perfect for all mobile device and all browser. */
 .submit-button,
 .login-button,
 .signup-button {
-  color: #0B5269;
-  background-color: #EAE1E1;
+  color: var(--theme-color-darker);
+  background-color: var(--theme-color-light);
 
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
 
   font-size: 1rem;
   font-weight: bold;
@@ -236,30 +224,30 @@ It's perfect for all mobile device and all browser. */
   min-width: 4rem;
   width: 50%;
 
-  border: 2px solid #0B5269;
+  border: 2px solid var(--theme-color-darker);
 }
 
 .signup-button {
   border-radius: 0px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
 }
 
 .selected-button {
-  color: #EAE1E1;
-  background-color: #0B5269;
+  color: var(--theme-color-light);
+  background-color: var(--theme-color-darker);
 }
 
 .submit-button {
-  color: #EAE1E1;
-  background-color: #0B5269;
-  border-radius: 4px;  
+  color: var(--theme-color-light);
+  background-color: var(--theme-color-darker);
+  border-radius: var(--border-radius);  
   margin: 1rem auto 0;  
   width: 50%;
 }
 
 .loading-messsage {
-  color: #03051E;
+  color: var(--theme-color-dark);
   font-size: 1rem;
   font-weight: bold;
   margin-top: 1rem;

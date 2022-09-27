@@ -1,0 +1,28 @@
+<!-- This is an unused html mockup for easier css styling -->
+
+<body>
+  <div class="container">
+
+    <header class="app-header">
+      <h1 class="app-title">Welcome to the chat Erland!</h1>
+      <button class="app-logout-button">Logout</button>
+    </header>
+
+    <ul class="chat-message-list">
+      <li class="chat-message-container {{ownMessageClass}}">
+        <p class="chat-message-text">Hello dit is een chat berichtje</p>
+          <button class="delete-message-button">X</button>
+      </li>
+      <li class="chat-message-container {{ownMessageClass}}">
+        <p class="chat-message-text">Hello dit is nog een ander een chat berichtje</p>
+          <button class="delete-message-button">X</button>
+      </li>
+    </ul>  
+
+    <form action="" class="message-form">
+      <input class="message-form-input" type="text" name="messageText" placeholder="type your message here" />
+      <button class="message-form-button" type="submit">Send</button>
+    </form>
+
+  </div>
+</body>

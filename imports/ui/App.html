@@ -12,22 +12,23 @@
     </header>
 
     {{#if isUserLoggedIn}}
-      <div class="chat-container">
-        {{> form}}
-        {{#if isLoading}}
-          <div class="loading-messsage">loading messsages...</div>
-        {{/if}}
-        <ul class="chat-message-list">
-          {{#each messages}}
-            {{> message}}
-          {{/each}}
-        </ul>  
-      </div>
+      {{#if isLoading}}
+        <div class="loading-messsage">loading messsages...</div>
+      {{/if}}
+      {{> messageList}}
+      {{> form}}
     {{else}}
       {{> login}}
     {{/if}}
-
   </div>
+</template>
+
+<template name="messageList">
+  <ul class="chat-message-list">
+    {{#each messages}}
+      {{> message}}
+    {{/each}}
+  </ul>
 </template>
 
 <template name="form">

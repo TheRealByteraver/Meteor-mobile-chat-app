@@ -9,14 +9,14 @@ Template.login.onCreated(function loginOnCreated() {
 });
 
 Template.login.helpers({
-  loginModeActive(){
+  loginModeActive() {
     return Template.instance().loginModeActive.get();
   },
-  loginButtonActiveClass(){
+  loginButtonActiveClass() {
     const loginModeActive = Template.instance().loginModeActive.get();
     return loginModeActive && 'selected-button';
   },
-  signupButtonActiveClass(){
+  signupButtonActiveClass() {
     const loginModeActive = Template.instance().loginModeActive.get();
     return (!loginModeActive) && 'selected-button';
   },
